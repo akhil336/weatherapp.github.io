@@ -12,6 +12,20 @@ let weather = {
         const {speed}=data.wind;
         console.log(data);
         console.log(name,description,temp,humidity,speed);
+        
+    document.getElementById("city").innerHTML=name;
+    document.querySelector(".temp").innerHTML=temp;
+    document.querySelector(".desc").innerHTML=description;
+    document.querySelector(".humidity").innerHTML=humidity;
+    document.querySelector(".wind").innerHTML=speed;
     }
 
 }
+let button=document.querySelector(".search-btn");
+button.addEventListener('click',()=>
+{   
+    let city1=document.querySelector("input").value;
+    //console.log(city1);
+    console.log(weather.fetchWeather(city1));
+
+})
